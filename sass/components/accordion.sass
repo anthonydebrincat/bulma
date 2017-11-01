@@ -1,0 +1,75 @@
+$accordion-bellow-text: $text !default
+$accordion-bellow-label: $primary
+$accordion-bellow-content: $accord-other
+$accordion-bellow-content-text: $text-strong
+
+/* Acordeon styles
+
+.bellow
+  position: relative
+  margin-bottom: 1px
+  width: 100%
+  color: #fff
+  overflow: hidden
+
+  label
+    position: relative
+    display: block
+    padding: 0 0 0 1em
+    background: $accordion-bellow-label
+    font-weight: bold
+    line-height: 3
+    cursor: pointer
+
+  .bellow-content
+    max-height: 0
+    overflow: hidden
+    background: $accordion-bellow-content
+    -webkit-transition: max-height .35s
+    -o-transition: max-height .35s
+    transition: max-height .35s
+    color: $accordion-bellow-content-text
+    p
+      margin: 1em
+
+  label::after
+    position: absolute
+    right: 0
+    top: 0
+    display: block
+    width: 3em
+    height: 3em
+    line-height: 3
+    text-align: center
+    -webkit-transition: all .35s
+    -o-transition: all .35s
+    transition: all .35s
+
+  input
+    position: absolute
+    opacity: 0
+    z-index: -1
+    &:checked ~ .bellow-content
+      max-height: 20em
+    &[type=checkbox] + label::after
+      content: "+"
+    &[type=radio] + label::after
+      content: "\25BC"
+    &[type=checkbox]:checked + label::after
+      transform: rotate(315deg)
+    &[type=radio]:checked + label::after
+      transform: rotateX(180deg)
+
+// Print fix
+@media print
+  .bellow-content
+    display: inline !important
+    height: auto !important
+    position: relative
+  .bellow label
+    display: inline !important
+    height: auto !important
+    position: relative
+    color: $text
+  ::after
+    content: " " !important
